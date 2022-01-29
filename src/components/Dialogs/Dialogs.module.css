@@ -1,0 +1,7 @@
+.dialogs {
+  display: flex;
+  height: 100%;
+  box-sizing: border-box;
+  color: white;
+  background-color: #141414;
+}

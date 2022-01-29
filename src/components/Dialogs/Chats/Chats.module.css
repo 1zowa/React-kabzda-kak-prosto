@@ -1,0 +1,72 @@
+.chats {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+.chats__avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: blueviolet;
+  margin-right: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.chats__item {
+  display: flex;
+  align-items: center;
+  padding-right: 50px;
+  padding-left: 10px;
+  text-decoration: none;
+  font-size: 20px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  color: #fff;
+}
+
+.chats:hover {
+  background-color: #2C2C2C;
+}
+
+a.active {
+  background-color: #ac74e1;
+}
+
+a.active:hover {
+  background-color: #ac74e1;
+}
+
+.dialogs__chats {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #171717;
+  border-right: 1px solid rgba(255, 255, 255, 0.4);
+  flex: 2;
+  height: calc( 100vh - 107.59px);
+  overflow: auto;
+}
+
+.dialogs__chats::-webkit-scrollbar {
+  width: 8px;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.dialogs__chats::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #323232;
+}
+
+.dialogs__chats::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0);
+}
+

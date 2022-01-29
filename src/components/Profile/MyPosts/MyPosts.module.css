@@ -1,0 +1,13 @@
+.myPost {
+  display: flex;
+  align-items: center;
+}
+
+.myPost__avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background-color: rgb(140, 150, 240);
+  margin: 10px;
+}

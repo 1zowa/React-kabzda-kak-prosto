@@ -1,0 +1,100 @@
+.dialog {
+  display: flex;
+  color: white;
+}
+
+.user {
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.friend {
+  display: flex;
+  align-self: flex-start;
+  
+}
+
+.friend p {
+  background-color: #212121;
+}
+
+.me {
+  display: flex;
+  align-self: flex-end;
+  
+}
+
+.me p {
+  background-color: #e174c6;
+}
+
+.dialogs__dialogItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 8;
+  overflow: auto;
+  box-sizing: border-box;
+  height: calc( 100vh - 107.59px);
+  padding-bottom: 30px;
+}
+
+.dialogItem__list {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: end;
+  padding: 0px 20px;
+  width: 50%;
+  height: calc( 100vh - 177.59px);
+  overflow: auto;
+  list-style: none;
+}
+
+.dialogItem__list::-webkit-scrollbar {
+  width: 8px;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.dialogItem__list::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #323232;
+}
+
+.dialogItem__list::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.dialogItem__buttons {
+  display: flex;
+  width: 50%;
+}
+
+.dialogItem__buttons textarea {
+  display: block;
+  flex-wrap: wrap;
+  width: 88%;
+  margin-right: 15px;
+  background-color: #212121;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 18px;
+  padding: 5px;
+  overflow: hidden;
+  outline: rgb(255, 255, 255);
+  caret-color: rgba(255, 255, 255, 0.432);
+}
+.dialogItem__buttons button {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-color: #212121;
+  border: none;
+  color: white;
+}
+
+.dialogItem__buttons button:hover {
+  background-color: #8774E1;
+}
