@@ -1,22 +1,22 @@
 import React from "react";
 import style from './MyPosts.module.css'
+import {postCreator, updatePostCreator} from "../../../redux/profile-reducer";
 
-const MyPosts = (props) => {
+const MyPosts = ({dataPost,dispatch}) => {
 
   let addPostButton = React.createRef()
 
   let addPost = () => {
-    props.addPost()
-    props.textareaValue('')
+    dispatch(postCreator());
   }
 
   let onchange = () => { 
     let text = addPostButton.current.value
-    props.textareaValue(text)
+    dispatch(updatePostCreator(text))
   }
 
   const MyPost = () => {
-    return props.dataPost.myPostData.map((elem, index) => {
+    return dataPost.myPostData.map((elem, index) => {
       return (
         <div className={style.myPost} key={index}>
           <div className={style.myPost__avatar}></div>
@@ -28,7 +28,7 @@ const MyPosts = (props) => {
 
   return (
     <div>
-      <textarea ref={addPostButton} value={props.dataPost.postText} onChange={onchange}></textarea>
+      <textarea ref={addPostButton} value={dataPost.postText} onChange={onchange}></textarea>
       <button onClick={addPost}>Submit</button>
       <MyPost />
     </div>

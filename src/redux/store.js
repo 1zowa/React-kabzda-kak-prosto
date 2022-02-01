@@ -1,3 +1,7 @@
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer";
+import sidebarReducer from "./sidebar-reducer";
+
 let store = {
   _state: {
     profilePage: {
@@ -18,11 +22,25 @@ let store = {
         { id: 6, text: 'Sixth Chat', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuvqrVkEbyqxnBX4U3caxnyRBoLrVWtDTFzCQGWEDfEgVtUTpPtrQrzr3CuBTuCc_h61U&usqp=CAU' },
       ],
       messageData: [
-        { message: 'Fifth text', user: 'me' },
-        { message: 'Fourth text', user: 'friend' },
-        { message: 'Third text', user: 'me' },
-        { message: 'Third text', user: 'friend' },
-        { message: 'First text', user: 'me' },
+        { message: 'Sixth text', user: '6' },
+        { message: 'Sixth text', user: 'me6' },
+        { message: 'Sixth text', user: '6' },
+        { message: 'Fifth text', user: 'me5' },
+        { message: 'Fifth text', user: '5' },
+        { message: 'Fifth text', user: 'me5' },
+        { message: 'Fifth text', user: '5' },
+        { message: 'Fourth text', user: '4' },
+        { message: 'Fourth text', user: '4' },
+        { message: 'Fourth text', user: '4' },
+        { message: 'Third text', user: '3' },
+        { message: 'Third text', user: 'me3' },
+        { message: 'Third text', user: '3' },
+        { message: 'Second text', user: '2' },
+        { message: 'Second text', user: '2' },
+        { message: 'First text', user: 'me1' },
+        { message: 'First text', user: '1' },
+        { message: 'First text', user: '1' },
+        { message: 'First text', user: 'me1' },
       ],
       messageField: '',
     },
@@ -42,30 +60,13 @@ let store = {
     console.log('State changed')
   },
 
-  addPost() {
-    let newPost = { "comment": this._state.profilePage.postText }
-    this._state.profilePage.myPostData.push(newPost)
-    this._rerender(this._state)
-  },
+  dispatch(action) {
 
-  textareaValue(postMessage) {
-    this._state.profilePage.postText = postMessage;
-    this._rerender(this._state)
-  },
+    this._state.profilePage = profileReducer(this._state.profilePage,action)
+    this._state.dialogsPage = dialogsReducer(this._state.dialogsPage,action)
+    this._state.sideBarPage = sidebarReducer(this._state.sideBarPage, action)
 
-  messageValue(message) {
-    this._state.dialogsPage.messageField = message;
     this._rerender(this._state)
-  },
-
-  addMessage() {
-    let newMessage = {
-      "message": this._state.dialogsPage.messageField,
-      "user": 'me'
-    }
-    this._state.dialogsPage.messageData.unshift(newMessage)
-    this._rerender(this._state)
-    this.messageValue('')
   },
 
   subscribe(observer) {
@@ -73,6 +74,5 @@ let store = {
   }
 
 }
-window.qwer = store._state.dialogsPage.dialogHeight
 
 export default store
