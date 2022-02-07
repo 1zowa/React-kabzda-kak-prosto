@@ -1,3 +1,7 @@
+.myPostWrapper {
+  padding-left: 50px;
+}
+
 .myPost {
   display: flex;
   align-items: center;

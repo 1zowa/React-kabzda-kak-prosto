@@ -1,16 +1,15 @@
 import React from "react";
 import Avatar from "./Avatar/Avatar";
-import MyPosts from "./MyPosts/MyPosts";
 import style from './Profile.module.css'
+import MyPostContainer from "./MyPosts/MyPostContainer";
 
-const Profile = (props) => {
-
-  return (
-    <div className={style.profile}>
-      <Avatar />
-      <MyPosts dataPost={props.dataProfile} dispatch={props.dispatch} />
-    </div>
-  )
+const Profile = ({profile}) => {
+    return (
+        <div className={style.profile}>
+            <Avatar {...profile}/>
+            <MyPostContainer/>
+        </div>
+    )
 }
 
 export default Profile;

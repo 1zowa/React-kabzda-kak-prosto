@@ -1,11 +1,11 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import style from './Chats.module.css'
+import { NavLink } from "react-router-dom";
 
-const Chats = (props) => {
+const Chats = ({chatsData}) => {
 
   const Chat = () => {
-    return props.dataDialogs.chatsData.map((elem, index) => {
+    return chatsData.map((elem, index) => {
       return (
         <NavLink 
         className={({ isActive }) => isActive ? `${style.active} ${style.chats}` : style.chats}
