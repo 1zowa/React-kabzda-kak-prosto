@@ -1,7 +1,8 @@
 .header {
   display: flex;
-  justify-content: flex-start;
-  padding-left: 50px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 50px;
   color: white;
   border-bottom: 1px solid rgba(141, 141, 141, 0.5);
   grid-area: header;
@@ -35,4 +36,40 @@
   to {
     opacity: 100%;
   }
+}
+
+.authUser {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.authUser__avatar {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  background-image: url('https://play-lh.googleusercontent.com/0oO5sAneb9lJP6l8c6DH4aj6f85qNpplQVHmPmbbBxAukDnlO7DarDW0b-kEIHa8SQ');
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.authUser span {
+  color: #fff;
+}
+
+.login {
+  color: white;
+  border: none;
+  background-color: #8C96F0;
+  padding: 10px 15px;
+  border-radius: 16px;
+  font-size: 16px;
+}
+
+.login:hover {
+  background-color: #8774E1;
+  cursor: pointer;
 }

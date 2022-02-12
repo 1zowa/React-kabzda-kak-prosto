@@ -11,14 +11,13 @@ const DialogsItem = ({messageData, messageField, textareaValue, onclickFunc}) =>
         let text = textareaField.current.value;
         textareaValue(text)
     }
-    let id = useParams()
-    let userID = id['*']
-    let arr = messageData.filter((elem) => elem.user === userID || elem.user === ('me' + userID))
+    let { chatId } = useParams()
+    let arr = messageData.filter((elem) => elem.user === chatId || elem.user === ('me' + chatId))
 
     const DialogItem = () => {
         return arr.map((elem, index) => {
             return (
-                <li className={`${style.dialog} ${elem.user === ('me' + userID) ? style.me : style.friend}`}
+                <li className={`${style.dialog} ${elem.user === ('me' + chatId) ? style.me : style.friend}`}
                     key={index}>
                     <p className={style.user}>{elem.message}</p>
                 </li>
@@ -34,7 +33,7 @@ const DialogsItem = ({messageData, messageField, textareaValue, onclickFunc}) =>
             {arr.length !== 0 ?
                 <div className={style.dialogItem__buttons}>
                     <textarea ref={textareaField} value={messageField} onChange={getValue}></textarea>
-                    <button onClick={() => onclickFunc(userID)}>Send</button>
+                    <button onClick={() => onclickFunc(chatId)}>Send</button>
                 </div> : null
             }
         </div>

@@ -44,7 +44,7 @@
     align-items: center;
     margin-bottom: 20px;
     margin-right: 30px;
-    width: 300px;
+    width: 290px;
 }
 
 .user__status {
@@ -58,6 +58,13 @@
     border-radius: 7px;
     border: none;
     color: #fff;
+}
+
+.followBtn:disabled {
+    background-color: #464646;
+}
+.followBtn:disabled:hover {
+    background-color: #464646;
 }
 
 .followBtn:hover {

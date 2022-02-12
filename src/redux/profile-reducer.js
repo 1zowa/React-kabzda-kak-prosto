@@ -1,3 +1,6 @@
+import axios from "axios";
+import {authAPI, UsersAPI} from "../API/api";
+
 const ADDPOST = 'ADD-POST';
 const UPDATE_POST = 'UPDATE_ADD_POST';
 const SET_PROFILE_USERS = 'SET_PROFILE_USERS';
@@ -33,12 +36,14 @@ const profileReducer = (state = initialState, action) => {
 }
 
 export const postCreator = () => ({type: ADDPOST});
-export const updatePostCreator = (postText) => {
-    return {
-        type: UPDATE_POST,
-        postText: postText
+export const updatePostCreator = (postText) => ({type: UPDATE_POST, postText})
+export const SetProfileUsers = (profile) => ({type: SET_PROFILE_USERS,profile})
+export const getProfile = () => {
+    return function (dispatch) {
+        authAPI.getMyProfile()
+            .then( dataProfile => UsersAPI.getProfile(dataProfile.data.id)
+                    .then( profile => dispatch(SetProfileUsers(profile))))
     }
 }
-export const SetProfileUsers = (profile) => ({type: SET_PROFILE_USERS,profile})
 
 export default profileReducer;
